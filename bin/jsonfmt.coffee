@@ -40,5 +40,6 @@ for sentenceNode in metadata.find("/treebank/sentence")
     throw "Bad word #{word}" unless parent
 
     parent.children.push(word)
+    word.parentId = null
 
 console.log(JSON.stringify(sentences, ((name, value) -> if value == null then undefined else value), 2))
